@@ -7,25 +7,38 @@ int main()
 {
     const int sizeArray = 10;
     int arr[sizeArray] { 1, 9, 8, 6, 7, 2, 4, 5, 3 };
-
+	// BEGIN of Draw array
 	for (int i = 0; i < sizeArray; i++)
 	{
 		std::cout << arr[i] << " ";
 	} std::cout << std::endl;
+	// END of Draw array
 
+	// BEGIN of BUBBLE SORT
+	for (int i = 0; i < sizeArray - 1; i++)
+	{
+		bool more = false;
+		for (int j = 0; j < sizeArray - 1 - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+				more = true;
+			}
+		}
+		if (false == more)
+		{
+			break;
+		}
+	}
+	// END of SORT
+
+	// BEGIN of Draw array
 	for (int i = 0; i < sizeArray; i++)
 	{
 		std::cout << arr[i] << " ";
 	} std::cout << std::endl;
+	// END of Draw array
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
